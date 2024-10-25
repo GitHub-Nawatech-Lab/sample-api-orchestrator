@@ -1,0 +1,82 @@
+[
+   {
+        "name": "greetings",
+        "description": "Invoke this function have intention to greet or opening conversation,in Bahasa Indonesia.",
+        "parameters": {}
+    },
+    {
+        "name": "closing",
+        "description": "Invoke this function have intention to close conversation,in Bahasa Indonesia.",
+        "parameters": {}
+    },
+    {
+        "name": "tourist_count",
+        "description": "This function is used when a user inquires about tourist information based on month, year, and location that is provided.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "The location name for the number of tourists to be searched, the location name can be an airport name, port name, or others.",
+                    "enum" : [
+                        "Ngurah Rai", "Soekarno-Hatta", "Juanda",
+                        "Kualanamu", "Adi Sucipto", "Bandara Int. Lombok",
+                        "Sam Ratulangi", "Minangkabau", "Sultan Syarif Kasim II",
+                        "Sultan Iskandar Muda", "Hasanuddin", "Sultan Badaruddin II",
+                        "Batam", "Tanjung Balai Karimun", "Tanjung Pinang",
+                        "Tanjung Uban", "Bandar Bentan Telani Lagoi", "Bandar Sri Udana Lobam",
+                        "Sekupang", "Citra Tri Tunas", "Marina Teluk Senimba", "Nongsa Terminal Bahari"
+                    ]
+                },
+                "month": {
+                      "type": "string",
+                      "description": "The specific month to be searched for. eg : 1,2,3,4,5, etc"
+                },
+                "year": {
+                        "type": "string",
+                        "description": "The specific month to be searched for. eg : 2024,2023,2022 etc"
+                }
+            },
+            "required": ["location", "month", "year"]
+        }
+    },
+  {
+        "name": "tourist_trend",
+        "description": "This function is used when the user requires monthly trend information of the number of tourists by location. For example:\n1 - \"Sebutkan jumlah pengunjung di bandara ... setiap bulan\"",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "The location name for the number of tourists to be searched, the location name can be an airport name, port name, or others."
+                },
+                "year": {
+                        "type": "string",
+                        "description": "The specific year to be searched for. eg : 2024,2023,2022 etc"
+                }
+            },
+            "required": ["location", "year"]
+        }
+    },
+  {
+        "name": "top_location",
+        "description": "This function is used when the user wants information on the top locations with the highest number of tourist entries based on a specific time period. For example:\n1 - \"Sebutkah lokasi dengan pengunjung tertinggi di tahun 2024\"",
+        "parameters": {
+            "type": "object",
+            "properties": {
+              "year": {
+                      "type": "string",
+                      "description": "The specific month to be searched for. eg : 2024,2023,2022 etc"
+              },
+              "ascending": {
+                      "type": "string",
+                      "description": "The specific order for querying. If user ask the most then DESC otherwise ASC",
+                      "enum" : [
+                        "DESC", "ASC"
+                      ]
+              }
+            },
+            "required": ["year", "ascending"]
+        }
+    }
+]

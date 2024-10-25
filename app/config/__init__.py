@@ -1,0 +1,1 @@
+from app.config.prompt_constant import *

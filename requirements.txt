@@ -1,0 +1,14 @@
+fastapi==0.114.0
+fastapi[standard]
+langchain==0.2.16
+langchain_community==0.2.16
+langchain_core==0.2.38
+langchain_openai==0.1.23
+numpy==1.26.4
+pgvector==0.2.5
+psycopg==3.2.1
+psycopg-binary==3.2.1
+psycopg2==2.9.7
+psycopg2_binary==2.9.8
+pydantic==2.9.1
+pydantic_settings==2.4.0
